@@ -1,11 +1,15 @@
-Backbone.Controller = function(options) {
-    options || (options = {});
-    this.initialize.apply(this, arguments);
-};
+(function() {
+    "use strict";
 
-_.extend(Backbone.Controller.prototype, Backbone.Events, {
-    initialize: function() {},
-    terminate: function() { this.stopListening(); }
-});
+    Backbone.Controller = function(options) {
+        options || (options = {});
+        this.initialize.apply(this, arguments);
+    };
 
-Backbone.Controller.extend = Backbone.Router.extend;
+    _.extend(Backbone.Controller.prototype, Backbone.Events, {
+        initialize: function() {},
+        terminate: function() { this.stopListening(); }
+    });
+
+    Backbone.Controller.extend = Backbone.Router.extend;
+}());
